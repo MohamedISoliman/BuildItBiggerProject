@@ -22,13 +22,9 @@ public class MainActivityFragment extends Fragment {
     View root = inflater.inflate(R.layout.fragment_main, container, false);
 
     AdView mAdView = root.findViewById(R.id.adView);
-    if (BuildConfig.FLAVOR.equalsIgnoreCase("free")) {
-      AdRequest adRequest =
-          new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
-      mAdView.loadAd(adRequest);
-    } else {
-      mAdView.setVisibility(View.GONE);
-    }
+    AdRequest adRequest =
+        new AdRequest.Builder().addTestDevice(AdRequest.DEVICE_ID_EMULATOR).build();
+    mAdView.loadAd(adRequest);
     return root;
   }
 }

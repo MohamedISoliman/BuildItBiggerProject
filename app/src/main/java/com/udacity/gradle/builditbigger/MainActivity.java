@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-import com.example.JokesProvider;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
@@ -17,8 +16,6 @@ import java.io.IOException;
 import me.geekymind.androidjokes.DisplayJokes;
 
 public class MainActivity extends AppCompatActivity {
-
-  JokesProvider jokesProvider = new JokesProvider();
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
   }
 
   public void tellJoke(View view) {
-    String joke = jokesProvider.generateNewJoke();
     new EndpointsAsyncTask().execute();
   }
 
